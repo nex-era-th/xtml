@@ -1,0 +1,16 @@
+
+{{
+  $template = template-test.html  
+  title = Thailand is the land of smile :-D
+  date = {{ $date }}
+  by = @devster
+  tag = thai political lisa business
+  pic = lisa.png
+
+}}
+
+[[
+
+  is this an html div?
+
+]]

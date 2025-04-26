@@ -1,0 +1,44 @@
+{{
+  template = template-test.html
+  title = this is the title of this document
+  date = today
+  by = @devster
+  tag = lisa thailand politic
+  pic = lisa.png
+}}
+
+
+. [[ main part ; $url = #main ]]
+. [[ second part ; $url = #second ]]
+
+
+[.red
+
+## This is in the block of red color [#main]
+
+this is paragraph ssssssssssssssssssssssssss sssssss sssssssssss sssssss sssssssss sssssss sssssssss ssssssssssss sssssssssss ssssssssssssssssssss sssssssss 
+
+
+this is paragraph vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv vvvvvvvvvvvvvvvv vvvvvvvvv vvvvvvvvvvv vvvvvvvvvvvvvvvvvvvvvvvvv vvvvvvvvvvvvvvvvvvv 
+
+. sssssssss
+. ssssssssssss
+. ssssss
+
+]
+[.yellow
+
+## this is yellow block [#second]
+
+ssssssssssssssssssssssssssssssssss ssssssss s s sssssssssssss ssssssssssssssssssssss ssssssss sssssssssssss
+
+1 thailand
+2 singapore
+3 usa
+
+
+]
+
+{{ $date }}
+
+[[ go to top ; $url = #top ]]

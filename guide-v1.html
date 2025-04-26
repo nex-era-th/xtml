@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"></head>
+  <style>
+    code { color: #5c6bc0 }
+    h2 { font-style: italic }
+    h3 { text-decoration: underline }
+    table { border-collapse: collapse; width: 100% } 
+    table, th, td { border: 1px solid black;  }
+    th, td { padding: 4px 8px }
+    .indent, .indent-16 { margin-left: 16px }
+    .sans-serif, .sans { font-family: sans-serif }
+    .mono { font-family: monospace }
+    .red { color: red }
+    .green { color: green }
+    .blue { color: blue }
+    .yellow { color: yellow }
+    .orange { color: orange }
+    .brown { color: brown }
+    .gray { color: gray }
+    .pink { color: pink }
+    .purple { color: purple}
+    .indigo { color: #5c6bc0 }
+    .c { text-align: center }
+    .r { text-align: right }
+    .l { text-align: left }
+  </style>
+<body><h1 id="title">Guide for XTML</h1><p><i><small>--version 1.0.2 / writer: @devster / last edit: Sat Apr 26 2025 11:00:01 GMT+0700 (Indochina Time) </small></i></p><p><div style="height: 16px"></div></p><ul><li><a href="#sum">Summary</a></li><li><a href="#how">How to use</a></li><li><a href="#head">Header</a></li><li><a href="#para">Paragraph</a></li><li><a href="#span">Span</a></li><li><a href="#bold">Bold</a></li><li><a href="#italic">Italic</a></li><li><a href="#underline">Underline</a></li><li><a href="#mark">Mark</a></li><li><a href="#bullet">Bullet List</a></li><li><a href="#number">Number List</a></li><li><a href="#link">Link</a></li><li><a href="#img">Image</a></li><li><a href="#small">Small Text</a></li><li><a href="#div">Block</a></li><li><a href="#codeBlock">Code Block</a></li><li><a href="#line">Line</a></li><li><a href="#var">Variable</a></li><li><a href="#attrib">Attribute</a></li><li><a href="#blockQuote">Block Quote</a></li><li><a href="#quote">Quote</a></li><li><a href="#xTag">xTag</a></li><li><a href="#table">Table</a></li><li><a href="#template">Template</a></li><li><a href="#html">Direct html</a></li><li><a href="#class">Default classes</a></li><li><a href="#final">Final Note</a></li></ul><p><div style="height: 32px"></div></p><h2>Attention</h2><p>This guide is good to read in XTML file because you see how to do it in the plain text. But you may switch to see html to realize the conversion.</p><hr><h2 id="sum">Summary</h2><p>The XTML is a very simple and clearn markup language. It allows you to make your document in plain text style, but easily to convert into html. So you can read both in XTML or HTML formats.</p><h3>Example of an xtml file</h3><pre style="white-space: pre-wrap"><code>
+# This is my title
+
+This is my paragraph which normally putting some interesting story into this part so peple can read it. Humanity uses text and languages to communicates among our society. The languages and text and the way we writing are the art, and brain of human being.
+
+Following is a list:
+
+. Thailand
+. Singapore
+. Malaysia
+
+That's it. This is a simple form when people write something.
+
+</code></pre><p>And when you convert this into html you'll see something similar to this guide. So the xtml is nice to both worlds, the plain text, and the web.</p><hr><h2 id="how">How to use</h2><p>You write your document in <code> your-doc.xtml </code> file which is a general text file, can be read by any text editor. But if you like to read in html format, you just do: </p><p><code>$ node xtml your-doc.xtml output.html </code></p><p>This way you get html file in which you can read in that style. So the picture, links and those stuff work in the html file.</p><hr><h2 id="head">Title</h2><p>We have <i>Title</i> and <i>Sub Title</i> here. The Title takes <code>#</code> and it gives you the <code>&lt;h1&gt;</code> in html. The Sub Title takes <code>##</code> and is the <code>&lt;h2&gt;</code> in html. </p><pre style="white-space: pre-wrap"><code>
+# This is the biggest title or &lt;h1&gt;
+## this is the second title or &lt;h2&gt;
+### This is heading 3 or &lt;h3&gt;
+
+</code></pre><p>! the <code> ### </code> just added to xtml feature.</p><p>We have made little styles to the title: the title 1 is <code>&lt;h1&gt;</code>, the title 2 is <code>&lt;h2&gt;</code> and being <i>italic</i> and title 3 <code>&lt;h3</code> with <u>underlined</u>.</p><hr><h2 id="para">Paragraph</h2><p>For paragraph you don't have to do anything so just type your story in each paragraph. Normally, you may put blank lines above and below. That's it.</p><pre style="white-space: pre-wrap"><code>
+Just type your words and we regard it as the paragrap right away (or &lt;p&gt; in html)
+
+</code></pre><hr><h2 id="span">Span</h2><p>In html we have <code> &lt;span&gt;....&lt;/span&gt; </code> the xtml also has things like <code> {this is your span or part of text within your paragraph} </code>. Please notice that there's no gap between the <code> { </code> and the <code> } </code> this allows xtml to understand this is the <code>&lt;span&gt;</code> for you.</p><p>If you want to set <code> id </code> or <code> class </code> you can do so like: <code> {ssssssssssss ; #id.class} </code>. So just put the <code> ; </code> and then set id and class as you want.</p><p><div style="height: 16px"></div></p><blockquote class="red"><p>! Remember: there must be no space between the <code>{...}</code>. So if you do like <code>{ this is my span  }</code> then it's not span.</p></blockquote><hr><h2 id="bold">Bold</h2><p>Put 2 stars for the <b>bold text</b> as:</p><pre style="white-space: pre-wrap"><code>
+puts 2 stars to **bold this text** ..........
+
+</code></pre><hr><h2 id="italic">Italic</h2><p>Uses 2 slashes for <i>italic text</i> like:</p><pre style="white-space: pre-wrap"><code>
+the text after this is //italic cccccccc// .............
+
+</code></pre><hr><h2 id="underline">Underline</h2><p>Double underscores for <u>underline your text</u>:</p><pre style="white-space: pre-wrap"><code>
+following text is to be __underlined sssssssss__ ...........
+
+</code></pre><hr><h2 id="mark">Mark</h2><p>You can mark or <mark>highlight text</mark> by putting <code> [m].....[m] </code> then you get something like <code> &lt;mark&gt;......&lt;/mark&gt; </code> in html.</p><hr><h2 id="bullet">Bullet List</h2><p>Put the <code> . </code> and list your points along down until you finish, just put a blank line after it and so you get the bullet lists.</p><pre style="white-space: pre-wrap"><code>
+. Thailand
+. Singapore
+. Malaysia
+
+</code></pre><p>In html will be:</p><ul><li>Thailand</li><li>Singapore</li><li>Malaysia</li></ul><hr><h2 id="number">Number List</h2><p>Put number, a space, and list your points and end with a blank line then you get the number list or in html is the <code> &lt;ol&gt; </code>.</p><pre style="white-space: pre-wrap"><code>
+1 Thailand
+2 Singapore
+3 Malaysia
+
+</code></pre><p>In html:</p><ol><li>Thailand</li><li>Singapore</li><li>Malaysia</li></ol><hr><h2 id="link">Link</h2><p>We have 2 styles of link. One with the description, this one not showing the URL so the reader won't be headache. Another one, no description just go straigth the URL. Do like this:</p><pre style="white-space: pre-wrap"><code>
+[[ click this ; $url = http://nex-era.xyz ]]
+[[ $url = http://nex-era.xyz ]]
+
+</code></pre><p><a href="#title">click this</a><br>
+<a href="http://nex-era.xyz">http://nex-era.xyz</a></p>
+<p>The first one we defined the text for reader to click and it brings her to another page or part of this page. Another one is we don't specify the clickable text just define the URL for them to click.</p><p>Personally, I'm prefering to just show the reader URL so she knows what she is about to click.</p><hr><h2 id="img">Image</h2><p><img src="lisa.png" style="width: 100%"></p><p>Simple put in a brackets like above and define where your pic file is. It will show in width 100% by default. So picture above comes by:</p><pre style="white-space: pre-wrap"><code>
+[[ $img = lisa.png ]]
+
+</code></pre><p>The image tag above it will generally put in the <code> &lt;p&gt;....&lt;/p&gt; </code> so you'll get some margins the browser preset for the <code> &lt;p&gt; </code>. To prevent it staying inside the <code> &lt;p&gt; </code> you can just put in html tag <code> &lt;img&gt; </code> like:</p><pre style="white-space: pre-wrap"><code>
+&lt;img src="/pic/file-name.jpg" style="width: 100%"&gt;
+
+</code></pre><p>This way you get pure picture, with no margin and all that. And you can also style it just like html file.</p><hr><h2 id="small">Small Text</h2><p>Surrounding the text with the [s] you'll get small text. The small text mark can govern the italice or other format inside, see below.</p><pre style="white-space: pre-wrap"><code>
+[s]this is your small text[s]
+[s]//this is italic and then small//[s]
+[s]**you can also have bold and small together too**[s]
+
+</code></pre><p>Your codes will show in html like:</p><p><small>this is your small text</small> <br>
+<small><i>this is italic and then small</i></small> <br>
+<small><b>you can also have bold and small together too</b></small></p>
+<hr><h2 id="div">Block</h2><p>We can do things like <code>&lt;div&gt;</code> as in html by using the double square brackets like below.</p><pre style="white-space: pre-wrap"><code>[[
+## your heading 1 or 2 can be in this block
+
+paragraph and other formatings can be here, bold, italic, bullet, numbering list.
+
+]]
+</code></pre><p>and you'll get these in your html file:</p><pre style="white-space: pre-wrap"><code>&lt;div&gt;
+  &lt;h2&gt;sssssssssssssssss&lt;/h2&gt;
+  &lt;p&gt;ssssssssssssssssssssssssssss&lt;/p&gt;
+&lt;/div&gt;
+</code></pre><p>If you like to put id to the <code> &lt;div&gt; </code> you can do so by putting <code> #xyz </code> and if like setting classes, you may put <code> #yourId.your-class-a.class-b </code> whatever.</p><hr><h2 id="codeBlock">Code Block</h2><p>You can put programming code block by doing this:</p><pre style="white-space: pre-wrap"><code> [c]
+
+    let x = 1000
+    let y = x + 3000
+
+    &lt;html&gt;..................&lt;/html&gt;
+    &lt;p&gt;.............&lt;/p&gt;
+
+ [c.]
+</code></pre><p>! In your real xtml file you have to put the [c] and [c.] at the first character otherwise xtml won't understand it. In this guide we put them at position 2 to avoid its conversion.</p><hr><h2 id="line">Line</h2><p>Puts the <code> ----- </code> for at least 30 characters then you get the line (or <code> &lt;hr&gt; </code> tag in html).</p><hr><h2 id="var">Variables</h2><p>Defines variable set in the file as:</p><pre style="white-space: pre-wrap"><code>{{
+
+  var1 = value.......
+  var2 = value2............
+  ...
+
+}}
+</code></pre><p>And then in any where on your file, you can say like: <code> {{ myVarname }} </code> so the var value shows up there at the double brackets.</p><p>For example if you put this in your file:</p><pre style="white-space: pre-wrap"><code>
+{{ $date }}
+
+</code></pre><p>you'll get:</p><p>Sat Apr 26 2025 11:00:01 GMT+0700 (Indochina Time)</p><p>Right now we have what can be called the global vars, like: <code> $date </code> and <code> $timeStamp </code>. So any where in your xtml text you put <code> {{ $date }} </code> it publishes the java script date style (from the js code like <code> new Date </code>).</p><p>You can define the Var any where in the doc but all the Vars will be assembled into 1 main object, which has only 1 per file. So all your Vars must be unique because it is each property of the main var.</p><h3>List of default variables in xtml so far</h3><table ><tr><th>variable</th><th>do</th><th>example</th></tr><tr><td>$date</td><td>get java script style date format</td><td>Sat Apr 26 2025 11:00:01 GMT+0700 (Indochina Time)</td></tr><tr><td>$timeStamp</td><td>get js timeStamp format</td><td>1745640001709</td></tr><tr><td>$randomInt</td><td>get random integer 5 digits</td><td>36839</td></tr><tr><td>$randomWords</td><td>get random words 8 characters</td><td>JnvdeRbz</td></tr><tr><td>$mixWordNum</td><td>get random mix words & num, 12 chars</td><td>jp0dYcsCwSPo</td></tr><tr><td>$isoTimeCondense</td><td>get ISO date format but condensed</td><td>202504261100</td></tr></table><p>For <code> $randomInt, $randomWords, mixWordNum </code> if you want different length from what it given, you can use the <code> [[...]] </code> by saying:</p><p><code>[[ getRandomInt(16) ]]</code> and then you'll get like:</p><p>7125794157267161</p><p>The other function names are: <code> getRandomWord(), getMixWordNum() </code>, check out <a href="#xTag">xTag section</a> for more info.</p><hr><h2 id="attrib">Attribute</h2><p>At the end of any line you can put <code> id </code> or <code> classes </code> to that line like:</p><p><code>this is your line......... [#xyz.red.green]</code></p><p>And you'll get this in your converted html:</p><pre style="white-space: pre-wrap"><code>
+&lt;p id="xyz" class="red green"&gt;..............&lt;/p&gt;
+
+</code></pre><p>can be like <code>[#id]</code> ....for only id </p><p>or like <code>[.class-a.class-b]</code> ...for classes, you can put any class as you want</p><p>The square barckets at the end of line allows you to set id and/or classes. You may set only id, or class, up to you.</p><hr><h2 id="blockQuote">Block Quote</h2><p>Do this:</p><pre style="white-space: pre-wrap"><code>"
+ 
+//**this is the quote............. something is going to happen and may not be that htings. The USA is doing somehting headache to the world. What'sre you dong, guys? Yeah!**//
+
+Is this going to be OK? I'm not sure but yeah, it is going to happen any time soon. The WW3? No, but can be. Who knows, man!
+
+"
+</code></pre><p>Output will show:</p><blockquote><p><i><b>this is the quote............. something is going to happen and may not be that htings. The USA is doing somehting headache to the world. What'sre you dong, guys? Yeah!</b></i></p><p>Is this going to be OK? I'm not sure but yeah, it is going to happen any time soon. The WW3? No, but can be. Who knows, man!</p></blockquote><p>Again, the <code> #id </code> and <code> .class </code> are optional, if you set the class in your template will effect to this block quote style.</p><p>In the block quote you can put other formatting tags like <code> **..** //..// __..__  </code> whatever.</p><hr><h2 id="quote">Quote</h2><p>Puts <code> ["]the quote from someone["] </code> will give your <code> &lt;q&gt;your text&lt;/q&gt; </code> in html format. Output is like <q>this is a quote</q> from someone.</p><hr><h2 id="xTag">xTag</h2><p>This is the <code>[[ ... ]]</code> as you can see we used it for <code> $url, $img </code> but we can do few more.</p><p>Besides to making <code> [[ $img = ... ]] </code> and link [c] <a href="...">...</a></p><p>[c] we may put java script into it like:</p><pre style="white-space: pre-wrap"><code>
+[[ Date.now() ]]
+[[ 3 + 5 ]]
+[[ getRandomInt(16) ]]
+
+</code></pre><p>So your document can calculate or do some programming things if you know java script.</p><p>There're functions you may use from inside the xtml like:</p><ul><li><code>getRandomInt( LENGTH )</code></li><li><code>getRandomWords( LENGTH )</code></li><li><code>getMixWordNum( LENGTH )</code></li><li><code>getIsoTimeCondense( LENGTH )</code></li><li><code>n3( NUMBER )</code></li></ul><p>For example if you say: <code> 3 + 5 = [[ 3 + 5 ]] </code></p><p>Then you get like:</p><p>3 + 5 = 8</p><p>Or you say <code> this is my code = [[ getMixWordNum(16) ]] </code> then you get:</p><p>this is my code = pQcLVohecNN4JG0e</p><p>Or say: <code> this is my ISO condensed code = [[ getIsoTimeCondense() ]]  </code> and you get:</p><p>my ISO code = 202504261100<br> which is the condensed style ignoring the dash '<code>-</code>' gooding for applying doc# all those stuff.</p><p>Or you like to do js code like: <code> this is my code = [[ Date.now().toString().slice(-5) ]] </code>. Then you get:</p><p>this is my code = 01710</p><p>Summary for this kind of <code>[[...]]</code> thing. You can do a lot in your document if you know java script. And the last note, if you just put a text inside it, then you just get a plain <code> [[ this is plain text ]] </code>, nothing happens.</p><h3>Addition <code> n3() </code> function</h3><p>You can now use <code>[[ n3( 1000000 ) ]]</code> and get back the <code> 1,000,000.00 </code>. This is new function we just added to the table body but you can use it in any <code>[[...]]</code> too.</p><hr><h2 id="table">Table</h2><p>Simply do this to make table in xtml:</p><pre style="white-space: pre-wrap"><code>[t]
+
+# | Product       | Price     | Qty  | Total
+1 | Mobile Phone  | 500.00    | 5    | 46532
+2 | Coffee        | 5,456,745 | 2    | 46
+
+[t.]
+</code></pre><p>And you get table in html like this:</p><table ><tr><th>#</th><th>Product</th><th>Price</th><th>Qty</th><th>Total</th></tr><tr><td>1</td><td>Mobile Phone</td><td>500.00</td><td>5</td><td>46532</td></tr><tr><td>2</td><td>Coffee</td><td>5,456,745</td><td>2</td><td>46</td></tr></table><p>You can also set id & classes by:</p><pre style="white-space: pre-wrap"><code>[t]#id.class-a.class-b 
+...
+...
+[t.]
+</code></pre><h3>The beauty of applying <code>xtml</code> in your table</h3><p>If you put your variables into table, it's beauty. Like:</p><pre style="white-space: pre-wrap"><code>
+{{
+
+product = coffee
+price   = 325.25
+
+}}
+
+[t]
+
+# | Product       | Price       | Qty | Total
+1 | {{ product }} | {{ price }} | 3   | [[ 3 * {{ price }} ]]
+2 | sssss         |             |     |
+
+
+[t.]
+</code></pre><p>And this is what you get in html:</p><table ><tr><th>#</th><th>Product</th><th>Price</th><th>Qty</th><th>Total</th></tr><tr><td>1</td><td>Coffee</td><td>325.25</td><td>3</td><td>975.75</td></tr><tr><td>2</td><td>sssss</td><td></td><td></td><td></td></tr></table><p>So beauty 'right! OK, now you can name your variables and calculate them and put them in your nice table in html with ease. So your quotation, or any doc that can utilize these things will be at breeze for you. WOW!</p><h3>Allign your table data cells</h3><p>You can align your data cells to left, center or right. See this:</p><pre style="white-space: pre-wrap"><code>[t]
+
+Product         | Price     
+Coffee          | 1,000.00 .r
+noodle          | 500.45 .r
+steak           | 80.00 .r
+
+[t.]
+</code></pre><p>And you get this:</p><table ><tr><th>Product</th><th>Price</th></tr><tr><td>Coffee -------------------</td><td class="r">1,000.00</td></tr><tr><td>noodle</td><td class="r">500.45</td></tr><tr><td>steak</td><td class="r">80.00</td></tr></table><p>This only works for the table cells, not applying to the table head as normally the table head will be aligned center which is nice already.</p><p>So the table cells supports classes and you can set like: <code> .r </code>, <code> .c </code> or <code> .l </code> and actually other classes that existed in the xtml default, or the classes in your template. But <code> .r, .c </code> would be usful for table cells alignment especially when you put numbers into the cells.</p><p>Note: <code> .r </code> = right align, <code> .c </code> = center and the <code> .l </code> = left but left already default to all table cells any way.</p><h3>Class n3 to separate 000,000 numbers</h3><p>We've provide you an <code> .n3 </code> class so you can format the number in the cell to be like <code> 1,000,000.50 </code> format, not just the raw <code> 1,000000 </code> thing. Do this:</p><blockquote class="green"><p>! just added, you can now use class <code> .k </code> too, to perform like <code> .n3 </code>. Added this to make it a little more short.</p></blockquote><pre style="white-space: pre-wrap"><code>[t]
+
+Product     | Price
+coffee      | 1000000         .r.n3
+noodle      | 12452.4563      .r.n3
+steak       | 46132132.135484 .r.n3
+
+
+[t.]
+</code></pre><p>And it gives you:</p><table ><tr><th>Product</th><th>Price</th></tr><tr><td>coffee</td><td class="r n3">1,000,000.00</td></tr><tr><td>noodle</td><td class="r n3">12,452.45</td></tr><tr><td>steak</td><td class="r n3">46,132,132.13</td></tr></table><p>So now you can make your numbers showing more currency type in case you do quotation, contract or things that involving currency.</p><hr><h2 id="template">Template</h2><p>The art of xtml is that we can have a template or many, which full of html codes, makes the content so beauty in the eyes of people but, in the same time we can have our dirty, little, writing stuff on xtml file. And then we merge them together, <b><span class="red">BOOM!</span></b>, you got your easy writing in xtml, presents in the beauty of html. WOW! nice isn't it.</p><p>So we have the template, html file, like this:</p><pre style="white-space: pre-wrap"><code>
+&lt;html&gt;
+
+...headache stuff, mostly techie things like
+&lt;meta ........
+&lt;script src=.......
+&lt;link href=.................
+&lt;style&gt;
+  p {..........}
+
+...whatever...
+
+&lt;body&gt;
+&lt;h1&gt;{{ title }}&lt;/h1&gt;
+&lt;img src="{{ pic }}" width="100%"&gt;
+
+...you may have many fancy stuff here, or anywhere...
+
+
+{{ $content }}
+
+
+...other stuff....
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre><p>And then you have a little xtml file saying like:</p><pre style="white-space: pre-wrap"><code>
+{{
+
+$template = techie-template-file.html
+title     = Something....
+pic       = /pic/nice-pic.png
+
+many other vars........
+
+}}
+
+And you write a lot of your content here, anything that you want, as long as you need..................
+
+. my bullet list
+. ssssssssssss
+. vvvvvvv
+
+
+</code></pre><p>And you run: </p><pre style="white-space: pre-wrap"><code>
+$ node xtml my-writing-file.xtml my-output.html 
+
+</code></pre><p>And then you got your beauty html file ready for all people. So we leave the techie-headache things with the html template, and we just focus on writing here in xtml. Plus also we can do some auto things like variables, calculations, little coding in xtml too. So, you see, the <u>static</u> thing is html template, the <u>dynamic</u> is our xtml. Then we keep using same templates while we write on xtml, once finish we publish it to the complete-beauty html with auto generated date/time.</p><p>That's it, about the template.</p><p>Oh, forgot one thing, the var <code> {{ $content }} </code> that you see on the template file meaning that all your content in the xtml will pour into that position. You want your content to be placed where you just put the <code>{{ $content }}</code> there. If you don't put it in the template, your content is not presented in the final html.</p><p>And in order to apply template, you have to put:</p><pre style="white-space: pre-wrap"><code>{{
+
+  $template = file-name.html
+  ....
+
+}}
+</code></pre><p>Otherwise, your template won't be used.</p><hr><h2 id="html">Direct Html</h2><p>We can put html tags directly in the xtml file so it just pass to the html file when you convert. Simply like that. So in using the xtml, it's an art of mixing between the xtml tags and html tags but it still works in the browser when you converted them.</p><p>So you can put things like:</p><pre style="white-space: pre-wrap"><code>
+&lt;img src="file-name.jpg"&gt;
+&lt;div&gt;
+.....
+.......
+&lt;/div&gt;
+
+</code></pre><p>And all these pass to your browser when you view html version. Yeah!</p><hr><h2 id="class">Default classes</h2><p>xtml gives you some default classes which you can use but when you not taking any template (means: you didn't set any tamplet variable in the <code> {{...}} </code> block). See following:</p><table ><tr><th>class</th><th>do</th></tr><tr><td>indent, indent-16</td><td>set margin-left = 16px</td></tr><tr><td class="sans">sans-serif, sans</td><td>font to sans-serif</td></tr><tr><td class="mono">mono</td><td>set font to monospace</td></tr><tr><td class="red">red</td><td>text color = red</td></tr><tr><td class="green">green</td><td>text color = green</td></tr><tr><td class="blue">blue</td><td>text color = blue</td></tr><tr><td class="yellow">yellow</td><td>yellow</td></tr><tr><td class="orange">orange</td><td>orange</td></tr><tr><td class="brown">brown</td><td>brown</td></tr><tr><td class="gray">gray</td><td>gray</td></tr><tr><td class="pink">pink</td><td>pink</td></tr><tr><td class="purple">purple</td><td>purple</td></tr><tr><td class="indigo">indigo</td><td>indigo color, code = #5c6bc0</td></tr><tr><td>l</td><td>text align left</td></tr><tr><td>c</td><td class="c">text aligns center</td></tr><tr><td>r</td><td class="r">aligns right</td></tr></table><p>So in your document you can put like <code> this text is green [.green] </code> then you get the green out of it. Like below:</p><p class="green">This text is green</p><p>Or you like to make an indent for a block of your content you may do like:</p><pre style="white-space: pre-wrap"><code>[[.indent
+
+So now this is a div of my text and I want it indented a little so it feels different from other part of my story.
+
+]]
+</code></pre><p>Then it goes:</p><div class="indent"><p>So now this is a div of my text and I want it indented a little so it feels different from other part of my story.</p></div><p>Easier ha! :-D </p><hr><h2 id="final">Final Note</h2><p>So we encourage you to write in xtml style and then convert to html for reading. But still, if you techie guys and hating fancy stuff, you can just read it in plain xtml format, fine. :-D</p><p>Have fun writing.</p><p>I personally will use this thing to write web pages, so I can put fancy things in my template and then I just write the story in this format, then convert to a nice web page before upload to server. Make life easier.</p><p>Good luck, guys.</p><p><div style="height: 40px"></div></p><a style="position: fixed; bottom: 8px; right: 8px" href="#title">Go up top</a>
+
+</body>
+</html>

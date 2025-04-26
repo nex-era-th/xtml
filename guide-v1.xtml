@@ -1,0 +1,913 @@
+{{
+    title       = Guide for XTML 
+    version     = 1.0.2
+    status      = released
+    by          = @devster
+
+    about       = XTML is a simple document language in which you can write your story in plain text and then convert to html to read. But still, you can also read in just this xtml text which not contain lots of garbages. So it's good to both worlds.
+    
+    license     = none
+    created     = April 21, 2025
+    lastUpdate  = {{ $date }}
+}}
+
+
+# Guide for XTML [#title]
+
+//[s]--version {{ version }} / writer: {{ by }} / last edit: {{ $date }} [s]//
+
+
+[[ $blankLine ]]
+
+. [[ Summary      ; $url = #sum ]]
+. [[ How to use   ; $url = #how ]]
+. [[ Header       ; $url = #head ]]
+. [[ Paragraph    ; $url = #para ]]
+. [[ Span         ; $url = #span ]]
+. [[ Bold         ; $url = #bold ]]
+. [[ Italic       ; $url = #italic ]]
+. [[ Underline    ; $url = #underline ]]
+. [[ Mark         ; $url = #mark ]]
+. [[ Bullet List  ; $url = #bullet ]]
+. [[ Number List  ; $url = #number ]]
+. [[ Link         ; $url = #link ]]
+. [[ Image        ; $url = #img ]]
+. [[ Small Text   ; $url = #small ]]
+. [[ Block        ; $url = #div ]]
+. [[ Code Block   ; $url = #codeBlock ]]
+. [[ Line         ; $url = #line ]]
+. [[ Variable     ; $url = #var ]]
+. [[ Attribute    ; $url = #attrib ]]
+. [[ Block Quote  ; $url = #blockQuote ]]
+. [[ Quote        ; $url = #quote ]]
+. [[ xTag         ; $url = #xTag ]]
+. [[ Table        ; $url = #table ]]
+. [[ Template     ; $url = #template ]]
+. [[ Direct html  ; $url = #html ]]
+. [[ Default classes ; $url = #class ]]
+. [[ Final Note   ; $url = #final ]]
+
+
+[[ $blankLine = 32px ]]
+
+
+
+## Attention
+
+This guide is good to read in XTML file because you see how to do it in the plain text. But you may switch to see html to realize the conversion.
+
+-------------------------------------------------------------------
+
+## Summary [#sum]
+
+The XTML is a very simple and clearn markup language. It allows you to make your document in plain text style, but easily to convert into html. So you can read both in XTML or HTML formats.
+
+
+### Example of an xtml file
+[c]
+
+# This is my title
+
+This is my paragraph which normally putting some interesting story into this part so peple can read it. Humanity uses text and languages to communicates among our society. The languages and text and the way we writing are the art, and brain of human being.
+
+Following is a list:
+
+. Thailand
+. Singapore
+. Malaysia
+
+That's it. This is a simple form when people write something.
+
+[c.]
+
+And when you convert this into html you'll see something similar to this guide. So the xtml is nice to both worlds, the plain text, and the web.
+
+
+
+-------------------------------------------------------------------
+
+
+## How to use [#how]
+
+You write your document in [c] your-doc.xtml [c] file which is a general text file, can be read by any text editor. But if you like to read in html format, you just do: 
+
+[c]$ node xtml your-doc.xtml output.html [c]
+
+This way you get html file in which you can read in that style. So the picture, links and those stuff work in the html file.
+
+
+-------------------------------------------------------------------
+
+
+## Title [#head]
+
+We have //Title// and //Sub Title// here. The Title takes [c]#[c] and it gives you the [c]<h1>[c] in html. The Sub Title takes [c]##[c] and is the [c]<h2>[c] in html. 
+
+[c]
+
+# This is the biggest title or <h1>
+## this is the second title or <h2>
+### This is heading 3 or <h3>
+
+[c.]
+
+! the [c] ### [c] just added to xtml feature.
+
+We have made little styles to the title: the title 1 is [c]<h1>[c], the title 2 is [c]<h2>[c] and being //italic// and title 3 [c]<h3[c] with __underlined__.
+
+-------------------------------------------------------------------
+
+
+
+## Paragraph [#para]
+
+For paragraph you don't have to do anything so just type your story in each paragraph. Normally, you may put blank lines above and below. That's it.
+
+[c]
+
+Just type your words and we regard it as the paragrap right away (or <p> in html)
+
+[c.]
+
+
+-------------------------------------------------------------------
+
+## Span [#span]
+
+In html we have [c] <span>....</span> [c] the xtml also has things like [c] {this is your span or part of text within your paragraph} [c]. Please notice that there's no gap between the [c] { [c] and the [c] } [c] this allows xtml to understand this is the [c]<span>[c] for you.
+
+If you want to set [c] id [c] or [c] class [c] you can do so like: [c] {ssssssssssss ; #id.class} [c]. So just put the [c] ; [c] and then set id and class as you want.
+
+[[ $blankLine ]]
+
+".red
+
+! Remember: there must be no space between the [c]{...}[c]. So if you do like [c]{ this is my span  }[c] then it's not span.
+
+"
+
+
+-------------------------------------------------------------------
+
+## Bold [#bold]
+
+Put 2 stars for the **bold text** as:
+
+[c]
+
+puts 2 stars to **bold this text** ..........
+
+[c.]
+
+
+
+-------------------------------------------------------------------
+## Italic [#italic]
+
+Uses 2 slashes for //italic text// like:
+
+[c]
+
+the text after this is //italic cccccccc// .............
+
+[c.]
+
+-------------------------------------------------------------------
+
+## Underline [#underline]
+
+Double underscores for __underline your text__:
+
+[c]
+
+following text is to be __underlined sssssssss__ ...........
+
+[c.]
+
+
+-------------------------------------------------------------------
+
+## Mark [#mark]
+
+You can mark or [m]highlight text[m] by putting [c] [m].....[m] [c] then you get something like [c] <mark>......</mark> [c] in html.
+
+
+
+-------------------------------------------------------------------
+
+## Bullet List [#bullet]
+
+Put the [c] . [c] and list your points along down until you finish, just put a blank line after it and so you get the bullet lists.
+
+[c]
+
+. Thailand
+. Singapore
+. Malaysia
+
+[c.]
+
+In html will be:
+
+. Thailand
+. Singapore
+. Malaysia
+
+
+-------------------------------------------------------------------
+
+
+## Number List [#number]
+
+Put number, a space, and list your points and end with a blank line then you get the number list or in html is the [c] <ol> [c].
+
+[c]
+
+1 Thailand
+2 Singapore
+3 Malaysia
+
+[c.]
+
+In html:
+
+1 Thailand
+2 Singapore
+3 Malaysia
+
+
+
+-------------------------------------------------------------------
+
+
+
+## Link [#link]
+
+We have 2 styles of link. One with the description, this one not showing the URL so the reader won't be headache. Another one, no description just go straigth the URL. Do like this:
+
+[c]
+
+[[ click this ; $url = http://nex-era.xyz ]]
+[[ $url = http://nex-era.xyz ]]
+
+[c.]
+
+<p>[[ click this ; $url = #title ]]<br>
+[[ $url = http://nex-era.xyz ]]</p>
+
+The first one we defined the text for reader to click and it brings her to another page or part of this page. Another one is we don't specify the clickable text just define the URL for them to click.
+
+Personally, I'm prefering to just show the reader URL so she knows what she is about to click.
+
+
+
+-------------------------------------------------------------------
+
+
+
+## Image [#img]
+
+[[ $img = lisa.png ]]
+
+Simple put in a brackets like above and define where your pic file is. It will show in width 100% by default. So picture above comes by:
+
+[c]
+
+[[ $img = lisa.png ]]
+
+[c.]
+
+The image tag above it will generally put in the [c] <p>....</p> [c] so you'll get some margins the browser preset for the [c] <p> [c]. To prevent it staying inside the [c] <p> [c] you can just put in html tag [c] <img> [c] like:
+
+[c]
+
+<img src="/pic/file-name.jpg" style="width: 100%">
+
+[c.]
+
+This way you get pure picture, with no margin and all that. And you can also style it just like html file.
+
+
+-------------------------------------------------------------------
+
+
+
+## Small Text [#small]
+
+Surrounding the text with the [s] you'll get small text. The small text mark can govern the italice or other format inside, see below.
+
+[c]
+
+[s]this is your small text[s]
+[s]//this is italic and then small//[s]
+[s]**you can also have bold and small together too**[s]
+
+[c.]
+
+Your codes will show in html like:
+
+<p>[s]this is your small text[s] <br>
+[s]//this is italic and then small//[s] <br>
+[s]**you can also have bold and small together too**[s]</p>
+
+
+
+-------------------------------------------------------------------
+
+
+
+## Block [#div]
+
+We can do things like [c]<div>[c] as in html by using the double square brackets like below.
+
+[c]
+[[
+## your heading 1 or 2 can be in this block
+
+paragraph and other formatings can be here, bold, italic, bullet, numbering list.
+
+]]
+[c.]
+
+and you'll get these in your html file:
+
+[c]
+<div>
+  <h2>sssssssssssssssss</h2>
+  <p>ssssssssssssssssssssssssssss</p>
+</div>
+[c.]
+
+If you like to put id to the [c] <div> [c] you can do so by putting [c] #xyz [c] and if like setting classes, you may put [c] #yourId.your-class-a.class-b [c] whatever.
+
+
+-------------------------------------------------------------------
+
+## Code Block [#codeBlock]
+
+You can put programming code block by doing this:
+
+[c]
+ [c]
+
+    let x = 1000
+    let y = x + 3000
+
+    <html>..................</html>
+    <p>.............</p>
+
+ [c.]
+[c.]
+
+
+! In your real xtml file you have to put the [c] and [c.] at the first character otherwise xtml won't understand it. In this guide we put them at position 2 to avoid its conversion.
+
+
+
+-------------------------------------------------------------------
+
+
+## Line [#line]
+
+Puts the [c] ----- [c] for at least 30 characters then you get the line (or [c] <hr> [c] tag in html).
+
+
+
+-------------------------------------------------------------------
+
+
+## Variables [#var]
+
+Defines variable set in the file as:
+
+[c]
+{{
+
+  var1 = value.......
+  var2 = value2............
+  ...
+
+}}
+[c.]
+
+And then in any where on your file, you can say like: [c] {{ myVarname }} [c] so the var value shows up there at the double brackets.
+
+For example if you put this in your file:
+
+[c]
+
+{{ $date }}
+
+[c.]
+
+you'll get:
+
+{{ $date }}
+
+Right now we have what can be called the global vars, like: [c] $date [c] and [c] $timeStamp [c]. So any where in your xtml text you put [c] {{ $date }} [c] it publishes the java script date style (from the js code like [c] new Date [c]).
+
+You can define the Var any where in the doc but all the Vars will be assembled into 1 main object, which has only 1 per file. So all your Vars must be unique because it is each property of the main var.
+
+
+
+### List of default variables in xtml so far
+
+[t]
+
+variable    | do                                | example
+$date       | get java script style date format | {{ $date }}
+$timeStamp  | get js timeStamp format           | {{ $timeStamp }}  
+$randomInt  | get random integer 5 digits       | {{ $randomInt }}
+$randomWords| get random words 8 characters     | {{ $randomWords }}
+$mixWordNum | get random mix words & num, 12 chars | {{ $mixWordNum }}
+$isoTimeCondense | get ISO date format but condensed | {{ $isoTimeCondense }}
+
+[t.]
+
+For [c] $randomInt, $randomWords, mixWordNum [c] if you want different length from what it given, you can use the [c] [[...]] [c] by saying:
+
+[c][[ getRandomInt(16) ]][c] and then you'll get like:
+
+[[ getRandomInt(16) ]]
+
+The other function names are: [c] getRandomWord(), getMixWordNum() [c], check out [[ xTag section ; $url = #xTag ]] for more info.
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------
+
+
+
+
+## Attribute [#attrib] 
+
+At the end of any line you can put [c] id [c] or [c] classes [c] to that line like:
+
+[c]this is your line......... [#xyz.red.green][c]
+
+
+And you'll get this in your converted html:
+
+[c]
+
+<p id="xyz" class="red green">..............</p>
+
+[c.]
+
+can be like [c][#id][c] ....for only id 
+or like [c][.class-a.class-b][c] ...for classes, you can put any class as you want
+
+The square barckets at the end of line allows you to set id and/or classes. You may set only id, or class, up to you.
+
+
+-------------------------------------------------------------------
+
+
+
+## Block Quote [#blockQuote]
+
+Do this:
+
+[c]
+"
+ 
+//**this is the quote............. something is going to happen and may not be that htings. The USA is doing somehting headache to the world. What'sre you dong, guys? Yeah!**//
+
+Is this going to be OK? I'm not sure but yeah, it is going to happen any time soon. The WW3? No, but can be. Who knows, man!
+
+"
+[c.]
+
+Output will show:
+
+"
+//**this is the quote............. something is going to happen and may not be that htings. The USA is doing somehting headache to the world. What'sre you dong, guys? Yeah!**//
+
+Is this going to be OK? I'm not sure but yeah, it is going to happen any time soon. The WW3? No, but can be. Who knows, man!
+
+"
+
+Again, the [c] #id [c] and [c] .class [c] are optional, if you set the class in your template will effect to this block quote style.
+
+In the block quote you can put other formatting tags like [c] **..** //..// __..__  [c] whatever.
+
+
+-------------------------------------------------------------------
+
+
+
+## Quote [#quote]
+
+Puts [c] ["]the quote from someone["] [c] will give your [c] <q>your text</q> [c] in html format. Output is like ["]this is a quote["] from someone.
+
+
+
+-------------------------------------------------------------------
+
+## xTag [#xTag]
+
+This is the [c][[ ... ]][c] as you can see we used it for [c] $url, $img [c] but we can do few more.
+
+Besides to making [c] [[ $img = ... ]] [c] and link [c] [[ $url = ... ]]
+[c] we may put java script into it like:
+
+[c]
+
+[[ Date.now() ]]
+[[ 3 + 5 ]]
+[[ getRandomInt(16) ]]
+
+[c.]
+
+So your document can calculate or do some programming things if you know java script.
+
+There're functions you may use from inside the xtml like:
+
+. [c]getRandomInt( LENGTH )[c]
+. [c]getRandomWords( LENGTH )[c]
+. [c]getMixWordNum( LENGTH )[c]
+. [c]getIsoTimeCondense( LENGTH )[c]
+. [c]n3( NUMBER )[c]
+
+For example if you say: [c] 3 + 5 = [[ 3 + 5 ]] [c]
+Then you get like:
+
+3 + 5 = [[ 3 + 5 ]]
+
+Or you say [c] this is my code = [[ getMixWordNum(16) ]] [c] then you get:
+
+this is my code = [[ getMixWordNum(16) ]]
+
+Or say: [c] this is my ISO condensed code = [[ getIsoTimeCondense() ]]  [c] and you get:
+
+my ISO code = [[ getIsoTimeCondense() ]]<br> which is the condensed style ignoring the dash '[c]-[c]' gooding for applying doc# all those stuff.
+
+Or you like to do js code like: [c] this is my code = [[ Date.now().toString().slice(-5) ]] [c]. Then you get:
+
+this is my code = [[ Date.now().toString().slice(-5) ]]
+
+Summary for this kind of [c][[...]][c] thing. You can do a lot in your document if you know java script. And the last note, if you just put a text inside it, then you just get a plain [c] [[ this is plain text ]] [c], nothing happens.
+
+
+
+### Addition [c] n3() [c] function
+
+You can now use [c][[ n3( 1000000 ) ]][c] and get back the [c] 1,000,000.00 [c]. This is new function we just added to the table body but you can use it in any [c][[...]][c] too.
+
+
+
+-------------------------------------------------------------------
+
+## Table [#table]
+
+Simply do this to make table in xtml:
+
+[c]
+[t]
+
+# | Product       | Price     | Qty  | Total
+1 | Mobile Phone  | 500.00    | 5    | 46532
+2 | Coffee        | 5,456,745 | 2    | 46
+
+[t.]
+[c.]
+
+And you get table in html like this:
+[t]
+
+# | Product         | Price     | Qty     | Total
+1 | Mobile Phone    | 500.00    | 5       | 46532
+2 | Coffee          | 5,456,745 | 2       | 46
+
+
+[t.]
+
+
+
+You can also set id & classes by:
+
+[c]
+[t]#id.class-a.class-b 
+...
+...
+[t.]
+[c.]
+
+
+### The beauty of applying [c]xtml[c] in your table
+
+If you put your variables into table, it's beauty. Like:
+
+[c]
+
+{{
+
+product = coffee
+price   = 325.25
+
+}}
+
+[t]
+
+# | Product       | Price       | Qty | Total
+1 | {{ product }} | {{ price }} | 3   | [[ 3 * {{ price }} ]]
+2 | sssss         |             |     |
+
+
+[t.]
+[c.]
+
+{{
+
+product = Coffee
+price = 325.25
+
+}}
+
+And this is what you get in html:
+
+[t]
+
+# | Product       | Price       | Qty | Total
+1 | {{ product }} | {{ price }} | 3   | [[ 3 * {{ price }} ]] 
+2 | sssss         |             |     |
+
+
+[t.]
+
+So beauty 'right! OK, now you can name your variables and calculate them and put them in your nice table in html with ease. So your quotation, or any doc that can utilize these things will be at breeze for you. WOW!
+
+
+### Allign your table data cells
+
+You can align your data cells to left, center or right. See this:
+
+[c]
+[t]
+
+Product         | Price     
+Coffee          | 1,000.00 .r
+noodle          | 500.45 .r
+steak           | 80.00 .r
+
+[t.]
+[c.]
+
+And you get this:
+
+[t]
+
+Product             | Price     
+Coffee ------------------- | 1,000.00 .r
+noodle              | 500.45 .r
+steak               | 80.00 .r
+
+[t.]
+
+This only works for the table cells, not applying to the table head as normally the table head will be aligned center which is nice already.
+
+So the table cells supports classes and you can set like: [c] .r [c], [c] .c [c] or [c] .l [c] and actually other classes that existed in the xtml default, or the classes in your template. But [c] .r, .c [c] would be usful for table cells alignment especially when you put numbers into the cells.
+
+Note: [c] .r [c] = right align, [c] .c [c] = center and the [c] .l [c] = left but left already default to all table cells any way.
+
+
+
+### Class n3 to separate 000,000 numbers
+
+We've provide you an [c] .n3 [c] class so you can format the number in the cell to be like [c] 1,000,000.50 [c] format, not just the raw [c] 1,000000 [c] thing. Do this:
+
+".green
+
+! just added, you can now use class [c] .k [c] too, to perform like [c] .n3 [c]. Added this to make it a little more short.
+
+"
+
+[c]
+[t]
+
+Product     | Price
+coffee      | 1000000         .r.n3
+noodle      | 12452.4563      .r.n3
+steak       | 46132132.135484 .r.n3
+
+
+[t.]
+[c.]
+
+And it gives you:
+
+[t]
+
+Product     | Price
+coffee      | 1000000         .r.n3
+noodle      | 12452.4563      .r.n3
+steak       | 46132132.135484 .r.n3
+
+[t.]
+
+
+So now you can make your numbers showing more currency type in case you do quotation, contract or things that involving currency.
+
+
+
+
+-------------------------------------------------------------------
+
+## Template [#template]
+
+The art of xtml is that we can have a template or many, which full of html codes, makes the content so beauty in the eyes of people but, in the same time we can have our dirty, little, writing stuff on xtml file. And then we merge them together, **{BOOM! ; .red}**, you got your easy writing in xtml, presents in the beauty of html. WOW! nice isn't it.
+
+So we have the template, html file, like this:
+
+[c]
+
+<html>
+
+...headache stuff, mostly techie things like
+<meta ........
+<script src=.......
+<link href=.................
+<style>
+  p {..........}
+
+...whatever...
+
+<body>
+<h1>{{ title }}</h1>
+<img src="{{ pic }}" width="100%">
+
+...you may have many fancy stuff here, or anywhere...
+
+
+{{ $content }}
+
+
+...other stuff....
+
+</body>
+</html>
+
+[c.]
+
+And then you have a little xtml file saying like:
+
+[c]
+
+{{
+
+$template = techie-template-file.html
+title     = Something....
+pic       = /pic/nice-pic.png
+
+many other vars........
+
+}}
+
+And you write a lot of your content here, anything that you want, as long as you need..................
+
+. my bullet list
+. ssssssssssss
+. vvvvvvv
+
+
+[c.]
+
+
+And you run: 
+
+[c] 
+
+$ node xtml my-writing-file.xtml my-output.html 
+
+[c.]
+
+And then you got your beauty html file ready for all people. So we leave the techie-headache things with the html template, and we just focus on writing here in xtml. Plus also we can do some auto things like variables, calculations, little coding in xtml too. So, you see, the __static__ thing is html template, the __dynamic__ is our xtml. Then we keep using same templates while we write on xtml, once finish we publish it to the complete-beauty html with auto generated date/time.
+
+That's it, about the template.
+
+
+Oh, forgot one thing, the var [c] {{ $content }} [c] that you see on the template file meaning that all your content in the xtml will pour into that position. You want your content to be placed where you just put the [c]{{ $content }}[c] there. If you don't put it in the template, your content is not presented in the final html.
+
+And in order to apply template, you have to put:
+
+[c]
+{{
+
+  $template = file-name.html
+  ....
+
+}}
+[c.]
+
+Otherwise, your template won't be used.
+
+
+
+
+-------------------------------------------------------------------
+
+
+## Direct Html [#html]
+
+We can put html tags directly in the xtml file so it just pass to the html file when you convert. Simply like that. So in using the xtml, it's an art of mixing between the xtml tags and html tags but it still works in the browser when you converted them.
+
+So you can put things like:
+
+[c]
+
+<img src="file-name.jpg">
+<div>
+.....
+.......
+</div>
+
+[c.]
+
+And all these pass to your browser when you view html version. Yeah!
+
+
+
+-------------------------------------------------------------------
+
+## Default classes [#class]
+
+xtml gives you some default classes which you can use but when you not taking any template (means: you didn't set any tamplet variable in the [c] {{...}} [c] block). See following:
+
+[t]
+
+class                   | do
+indent, indent-16       | set margin-left = 16px
+sans-serif, sans  .sans | font to sans-serif 
+mono              .mono | set font to monospace
+red                .red | text color = red 
+green            .green | text color = green 
+blue              .blue | text color = blue 
+yellow          .yellow | yellow 
+orange          .orange | orange
+brown            .brown | brown
+gray              .gray | gray
+pink              .pink | pink 
+purple          .purple | purple
+indigo          .indigo | indigo color, code = #5c6bc0
+l                       | text align left
+c                       | text aligns center  .c
+r                       | aligns right        .r
+
+[t.]
+
+
+So in your document you can put like [c] this text is green [.green] [c] then you get the green out of it. Like below:
+
+This text is green [.green]
+
+
+Or you like to make an indent for a block of your content you may do like:
+
+[c]
+[[.indent
+
+So now this is a div of my text and I want it indented a little so it feels different from other part of my story.
+
+]]
+[c.]
+
+Then it goes:
+[[.indent
+
+So now this is a div of my text and I want it indented a little so it feels different from other part of my story.
+
+]]
+
+Easier ha! :-D 
+
+
+
+
+-------------------------------------------------------------------
+
+## Final Note [#final]
+
+So we encourage you to write in xtml style and then convert to html for reading. But still, if you techie guys and hating fancy stuff, you can just read it in plain xtml format, fine. :-D
+
+Have fun writing.
+
+I personally will use this thing to write web pages, so I can put fancy things in my template and then I just write the story in this format, then convert to a nice web page before upload to server. Make life easier.
+
+Good luck, guys.
+
+
+
+
+
+
+
+
+
+[[ $blankLine = 40px ]]
+<a style="position: fixed; bottom: 8px; right: 8px" href="#title">Go up top</a>
+

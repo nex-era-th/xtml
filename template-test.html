@@ -1,0 +1,27 @@
+<html>
+<head>
+  <style>
+    /* can put styles here */
+    h1 { color: blue }
+    img { width: 100% }
+    .red { background-color: red;}
+    .green { background-color: green;}
+    .blue { background-color: blue;}
+    .yellow { background-color: yellow;}
+  </style>
+</head>
+<body>
+  <h1 id="top">{{ title }}</h1>
+
+  <div style="font-size: small; font-family: monospace; color: blue">
+    <span>date: {{ date }}</span><br>
+    <span>by: {{ by }}</span><br>
+    <span>tag: {{ tag }}</span>
+  </div>
+  <img src="{{ pic }}" width="100%">
+
+
+  {{ $content}}
+
+</body>
+</html>
