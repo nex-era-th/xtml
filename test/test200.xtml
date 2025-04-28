@@ -1,0 +1,47 @@
+
+
+{{
+  $jsFile = 
+  $cssFile =  
+}}
+
+<div id="time_limit_content">
+
+# test $jsFile and $cssFile [.test-red]
+
+sssssssssssssssssssssssssssss sssssssssss sssssssss ssssssssss ssssss ssssssssssssss sssssssss
+
+</div>
+<div id="expired" hidden>
+
+  <p>this page is expired.</p>
+
+</div>
+
+<script>
+let answer
+while (answer != 'thailand' ) {
+  answer = prompt('code:')
+} 
+
+
+
+function setExpireOn( dat_e ) {
+  let todaY = new Date
+  let yeaR = todaY.getFullYear()
+  let montH = todaY.getMonth + 1
+  let daY = todaY.getDate()
+
+  let [ checkY, checkM, checkD ] = dat_e.split('-')
+
+  if ( yeaR > checkY || montH > Number(checkM) || daY > Number(checkD) ) {
+    time_limit_content.hidden = true
+    expired.hidden = false
+  } else {
+    time_limit_content.hidden = false
+    expired.hidden = true
+  }
+}
+setExpireOn('2025-05-31')
+
+</script>

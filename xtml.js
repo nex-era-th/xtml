@@ -1,7 +1,7 @@
 /*
     program     = xtml.js
     for         = makes writing more easier for html. You write in xtml format and people also be readable and even converting to html it also presentable in html
-    version     = 1.0.1
+    version     = 1.0.3
     license     = none	
     releaseDate = 21:08 apr19/2025 +7
     lastUpdate  = 23:46 apr25/2025 +7
@@ -90,6 +90,8 @@ xRead( FILE_INPUT ).then( conTent => {
 
   let varMode = false
   let theVar = {
+    $jsFile : '',  // we allow user to attach script file in the head
+    $cssFile : ''
     //template  : '', // default key, so user can't dup
     //date      : '',
     //timeStamp : ''        ^ not true, any key can be dup anyway
@@ -741,6 +743,9 @@ xRead( FILE_INPUT ).then( conTent => {
 <html>
 <head>
   <meta charset="UTF-8"></head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="${ theVar.$jsFile }"></script>
+  <link rel="stylesheet" type="text/css" href="${ theVar.$cssFile }">
   <style>
     code { color: #5c6bc0 }
     h2 { font-style: italic }

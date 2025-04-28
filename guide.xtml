@@ -1,6 +1,6 @@
 {{
     title       = Guide for XTML 
-    version     = 1.0.2
+    version     = 1.0.3
     status      = released
     by          = @devster
 
@@ -885,6 +885,27 @@ So now this is a div of my text and I want it indented a little so it feels diff
 
 Easier ha! :-D 
 
+
+
+
+-------------------------------------------------------------------
+
+## Java Script & CSS [#js]
+
+We just added java script and css support, so if you do:
+
+[c]
+
+{{
+
+  $jsFile   = my-great-script.js
+  $cssFile  = my-good-style.css
+
+}}
+
+[c.]
+
+Then your files will be in cluded in the [c] <head> [c] part of the converted html file. But this only if you don't set the [c] $template [c], because if you have template, that template will takeover everything in the html [c] <head> [c].
 
 
 
